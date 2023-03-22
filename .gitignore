@@ -1,0 +1,6 @@
+# ignore train & test dataset and weight file
+data
+output
+
+# ignore pycache
+__pycache__
