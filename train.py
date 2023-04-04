@@ -16,7 +16,7 @@ def parse():
     parser.add_argument("--batch_size", type=int, action="store", default=64)
     parser.add_argument("--learning_rate", type=int, action="store", default=1e-3)
     parser.add_argument("--num_epochs", type=int, action="store", default=20)
-    parser.add_argument("--device", type=str, action="store", default="mpu")
+    parser.add_argument("--device", type=str, action="store", default="cuda")
     parser.add_argument("--output_dir", type=str, action="store", default="./output/")
 
     args = parser.parse_args()
@@ -34,7 +34,7 @@ def process(args):
         device = torch.device('mps:0' if torch.backends.mps.is_available() else 'cpu')
     
     else:
-        device = torch.device('cuda:0' if torch.backends.mps.is_available() else 'cpu')
+        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     loss_fn = nn.CrossEntropyLoss()
     n_steps = len(train_datasets) // args.batch_size
