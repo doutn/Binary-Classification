@@ -5,7 +5,6 @@
 ### Dataset
 ---
 Dataset은 Kaggle의 [Cats and Dogs](https://www.kaggle.com/datasets/tongpython/cat-and-dog)데이터셋을 사용했습니다.  
-
 train dataset은 약 8000장이고, test dataset은 약 2000장입니다. 별다른 valid dataset은 사용하지 않았습니다.
 
 ### Train
